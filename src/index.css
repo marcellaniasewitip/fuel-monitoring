@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 10%;
+    --foreground: 40 10% 90%;
+
+    --card: 220 18% 13%;
+    --card-foreground: 40 10% 90%;
+
+    --popover: 220 18% 13%;
+    --popover-foreground: 40 10% 90%;
+
+    --primary: 38 95% 50%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 40 10% 85%;
+
+    --muted: 220 15% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 38 80% 45%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 8%;
+
+    --critical: 0 72% 51%;
+    --critical-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 38 95% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 40 10% 75%;
+    --sidebar-primary: 38 95% 50%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 40 10% 90%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 38 95% 50%;
+
+    --chart-fuel: 200 80% 50%;
+    --chart-temp: 0 72% 51%;
+    --chart-pressure: 142 71% 45%;
+    --chart-flow: 38 92% 50%;
+
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+
+    --glow-primary: 0 0 20px hsl(38 95% 50% / 0.15);
+    --glow-success: 0 0 20px hsl(142 71% 45% / 0.15);
+    --glow-critical: 0 0 20px hsl(0 72% 51% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-sans);
+  }
+
+  code, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-success {
+    box-shadow: var(--glow-success);
+  }
+  .glow-critical {
+    box-shadow: var(--glow-critical);
+  }
+  .industrial-grid {
+    background-image: 
+      linear-gradient(hsl(220 15% 15% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 15% 15% / 0.5) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(220 20% 10% / 0.03) 2px,
+      hsl(220 20% 10% / 0.03) 4px
+    );
+  }
+}
